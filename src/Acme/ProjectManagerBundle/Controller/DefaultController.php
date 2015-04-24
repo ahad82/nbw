@@ -97,27 +97,6 @@ class DefaultController extends Controller
         $statusList = $this->container->getParameter('statusList');
         
         $Tasks = $em->getRepository("AcmeProjectManagerBundle:Task")->findBy(array("projectId"=>$projectId));
-        
-        foreach($Tasks as $task){
-            //echo $task->getName() . "<br>";
-            $deps =  $task->getDependencies();
-            if($deps){
-                foreach ($deps as $dep){
-                    //echo "--- dependency -- <br>";
-                    /*$dependents_task = $em->getRepository("AcmeProjectManagerBundle:Task")->find($dep->getTaskId());
-                    echo "Depends on: " . $dependents_task->getName() . "<br>";
-                    echo "Depends on status:" . array_search($dep->getOnStatus(), $statusList) . "</br>";
-                    echo "Update status to:" . array_search($dep->getDoStatus(), $statusList) . "</br>";*/
-                    
-                   /* $Tasks["dependencies"][] = array ("on_task_name"=>$dependents_task->getName(),
-                                                      "on_task_id" => $dependents_task->getId(),
-                                                      "on_task_status"=>array_search($dep->getOnStatus(), $statusList),
-                                                       "do_task_status"=>array_search($dep->getDoStatus(), $statusList));*/
-                }
-            }
-    
-        }
-
               
         return $this->render('AcmeProjectManagerBundle:Default:listTasks.html.php', array('projectId'=>$projectId, 'statusList'=>$statusList, 'Tasks' => $Tasks));
         
@@ -176,9 +155,6 @@ class DefaultController extends Controller
                                                    "do_task_status"=>array_search($dep->getDoStatus(), $statusList));
             }
         }
-        
-        
-        
         return $this->render('AcmeProjectManagerBundle:Default:dependency.html.php', array('projectId'=>$task->getProjectId(), 'taskId'=>$taskId, 'dependencyList'=>$dependencyList, 'form' => $form->createView()));
         
     }
