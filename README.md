@@ -5,6 +5,4 @@ This is project management blue print on a very limited scale
 The application logic resides in this bundle
 ### Entities
 There are three ORM entities
-Project
-Task
-Dependency
+Project, Task and Dependency
