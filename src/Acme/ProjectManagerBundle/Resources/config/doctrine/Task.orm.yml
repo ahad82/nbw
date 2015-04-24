@@ -1,0 +1,53 @@
+Acme\ProjectManagerBundle\Entity\Task:
+    type: entity
+    table: null
+    repositoryClass: Acme\ProjectManagerBundle\Entity\TaskRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        projectId:
+            type: integer
+            column: project_id
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+        status:
+            type: integer
+        createDate:
+            type: datetime
+            column: create_date
+        updateDate:
+            type: datetime
+            column: update_date
+        createdBy:
+            type: string
+            length: 255
+            column: created_by
+        updatedBy:
+            type: string
+            length: 255
+            column: updated_by
+        deleted:
+            type: integer
+            column: deleted
+    lifecycleCallbacks: {  }
+    
+    Task:
+    type: entity
+    manyToMany:
+        dependencies:
+            targetEntity: Dependency
+            joinTable:
+                name: task_dependency
+                joinColumns:
+                    task_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    dependency_id:
+                        referencedColumnName: id

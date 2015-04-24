@@ -1,0 +1,36 @@
+Acme\ProjectManagerBundle\Entity\Project:
+    type: entity
+    table: null
+    repositoryClass: Acme\ProjectManagerBundle\Entity\ProjectRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+        status:
+            type: integer
+        createDate:
+            type: datetime
+            column: create_date
+        updateDate:
+            type: datetime
+            column: update_date
+        createdBy:
+            type: string
+            length: 255
+            column: created_by
+        updatedBy:
+            type: string
+            length: 255
+            column: updated_by
+        deleted:
+            type: integer
+            column: deleted
+    lifecycleCallbacks: {  }

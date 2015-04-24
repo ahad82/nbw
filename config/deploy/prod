@@ -1,0 +1,2 @@
+role :web, "phoenix.training.local"
+role :app, "phoenix.training.local"

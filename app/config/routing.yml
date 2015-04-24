@@ -1,0 +1,6 @@
+acme_project_manager:
+    resource: "@AcmeProjectManagerBundle/Resources/config/routing.yml"
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation

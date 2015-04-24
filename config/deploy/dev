@@ -1,0 +1,2 @@
+role :web, "sco6058web001.training.local"
+role :app, "sco6058web001.training.local"

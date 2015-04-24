@@ -1,0 +1,8 @@
+acme_project_manager_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: AcmeProjectManagerBundle:Default:index }
+
+_project:
+    resource: "@AcmeProjectManagerBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix:   /project

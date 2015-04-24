@@ -1,0 +1,7 @@
+parameters:
+    statusList:
+        complete: 1
+        active: 2
+        inactive: -1
+        new: 3      
+        

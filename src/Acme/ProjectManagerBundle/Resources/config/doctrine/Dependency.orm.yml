@@ -1,0 +1,38 @@
+Acme\ProjectManagerBundle\Entity\Dependency:
+    type: entity
+    table: null
+    repositoryClass: Acme\ProjectManagerBundle\Entity\DependencyRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        taskId:
+            type: integer
+            column: task_id
+        onStatus:
+            type: integer
+            column: on_status
+        doStatus:
+            type: integer
+            column: do_status
+        createDate:
+            type: datetime
+            column: create_date
+        updateDate:
+            type: datetime
+            column: update_date
+        createdBy:
+            type: string
+            length: 255
+            column: created_by
+        updatedBy:
+            type: string
+            length: 255
+            column: updated_by
+        deleted:
+            type: integer
+            column: deleted
+    lifecycleCallbacks: {  }
